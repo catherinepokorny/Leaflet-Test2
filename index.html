@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaflet Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <style>
+        /* Set the size of the map container */
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Map Container -->
+<div id="map"></div>
+
+<script>
+    // Initialize the map
+    var map = L.map('map').setView([40, -100], 4); // Center the map on coordinates [latitude, longitude] and set zoom level
+
+    // Add a base layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add a marker
+    L.marker([40, -100]).addTo(map)
+        .bindPopup('This is a sample marker.');
+
+</script>
+
+</body>
+</html>
